@@ -1,0 +1,8 @@
+<div id="panel-{{id}}" class="govuk-panel govuk-panel--confirmation">
+    <h1 *ngIf="title" class="govuk-panel__title" id="panel-title-{{id}}">
+        {{title}}
+    </h1>
+    <div class="govuk-panel__body" id="panel-body-{{id}}">
+        <ng-content></ng-content>
+    </div>
+</div>

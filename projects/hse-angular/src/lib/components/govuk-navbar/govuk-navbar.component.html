@@ -1,0 +1,21 @@
+<nav class="app-navigation govuk-clearfix">
+    <div class="govuk-width-container">
+        <ul class="app-navigation__list">
+            <li *ngFor="let nav of navs" class="app-navigation__list-item" 
+                    [ngClass]="{'app-navigation__list-item--current': nav.active}">
+
+                <a class="govuk-link govuk-link--no-visited-state
+                govuk-link--no-underline app-navigation__link js-app-navigation__link" 
+                    [id]="createId(nav.label)" 
+                    href="#" 
+                    (click)="onClick($event, nav, createId(nav.label))" 
+                    routerLinkActive="active" role="link"> 
+                        {{nav.label}} 
+                </a>
+
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<ng-content></ng-content>

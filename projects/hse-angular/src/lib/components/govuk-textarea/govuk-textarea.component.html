@@ -1,0 +1,18 @@
+<govuk-field  id="textarea-field-{{id}}" [label]="label" [labelClass]="labelClass" [isPageHeading]="isPageHeading" [labelFor]="labelFor" 
+              [errorText]="errorText" [errorClass]="errorClass"
+              [hint]="hint" [hintClass]="hintClass">
+
+  <textarea id="textarea-{{id}}" 
+            [attr.name]="name || id" 
+            [attr.rows]="rows" 
+            class="govuk-textarea {{class}}"
+            [ngClass]="{'govuk-textarea--error' : errorText, 'govuk-character-count': enableCharacterCount}" 
+            [attr.maxlength]="maxlength" 
+            [attr.type]="type"
+            [(ngModel)]="model" 
+            (ngModelChange)="textareaNgModelChange($event)">
+  </textarea>
+
+  <govuk-character-count [enableCharacterCount]="enableCharacterCount" [numCharactersRemaining]="numCharsRemaining"></govuk-character-count>
+
+<govuk-field>

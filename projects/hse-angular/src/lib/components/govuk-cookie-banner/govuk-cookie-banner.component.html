@@ -1,0 +1,19 @@
+<govuk-cookie-banner-message *ngIf="showCookieBanner" [nameService]="title"
+    (cookiesAccepted)="onCookiesAccepted.emit()" (cookiesRejected)="onCookiesRejected.emit()"
+    [viewCookiesLink]="viewCookiesLink" />
+
+<govuk-cookie-banner-confirmation *ngIf="this.cookiesAccepted && this.showConfirmBanner" (onHideCookie)="onHideCookieBannerConfirmation.emit()">
+    <govuk-body>
+        You've accepted analytics cookies.
+        You can <a class="govuk-link" (click)="onChangeCookies.emit()" role="link" tabindex="0">change your
+            cookie settings</a> at any time.
+    </govuk-body>
+</govuk-cookie-banner-confirmation>
+
+<govuk-cookie-banner-confirmation *ngIf="!this.cookiesAccepted && this.showConfirmBanner" (onHideCookie)="onHideCookieBannerConfirmation.emit()">
+    <govuk-body>
+        You've rejected analytics cookies.
+        You can <a class="govuk-link" (click)="onChangeCookies.emit()" role="link" tabindex="0">change your
+            cookie settings</a> at any time.
+    </govuk-body>
+</govuk-cookie-banner-confirmation>

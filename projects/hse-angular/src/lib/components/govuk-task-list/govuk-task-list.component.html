@@ -1,0 +1,12 @@
+<ol class="app-task-list">
+    <li *ngFor="let item of taskListRows">
+        <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">{{item.sectionNumber}}.</span>
+            {{item.text}}
+        </h2>
+        <ul class="app-task-list__items">
+            <ng-container *ngTemplateOutlet="item.template" />
+        </ul>
+    </li>
+</ol>
+<ng-content></ng-content>

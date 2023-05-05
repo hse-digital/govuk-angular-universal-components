@@ -1,0 +1,17 @@
+<govuk-field id="field-{{id}}" [label]="label" [labelClass]="labelClass"
+             [isPageHeading]="isPageHeading" [labelFor]="labelFor" 
+             [hint]="hint" [hintClass]="hintClass"
+             [errorText]="errorText" [errorClass]="errorClass">
+
+    <select id="select-{{id}}" [attr.name]="name || id" class="govuk-select {{ class }}"
+        [ngClass]="{ 'govuk-select--error': errorText }" [ngModel]="model"
+        (change)="onChange($event)">
+
+        <option *ngFor="let item of options" [value]="item.value" [disabled]="item.disabled">
+            {{ item.text }} {{ item.disabled }}
+        </option>
+
+    </select>
+</govuk-field>
+
+<ng-content />
